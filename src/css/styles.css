@@ -1,0 +1,108 @@
+
+.navbar-inverse {
+    background-color: #425370
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #FFF7E3
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #FFF7E3
+}
+
+.dropdown-menu {
+    background-color: #FFF7E3
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #425370
+}
+
+.navbar-inverse {
+    background-image: none;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-image: none;
+}
+
+.navbar-inverse {
+    border-color: #5F7269
+}
+
+.navbar-inverse .navbar-brand {
+    color: #BDB395;
+    /*height: 75px;*/
+}
+
+.navbar-brand img {
+    height: 50px;
+    padding-right: 2em;
+}
+.navbar-brand {
+    padding: 0px 15px;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: #5F7269
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF7E3
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #5F7269
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #5F7269ΩΩΩ
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #5F7269
+}
+
+.dropdown-menu > li > a {
+    color: #5F7269
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #FFF7E3
+}
+
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+    border-top-color: #FFF7E3
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #FFF7E3
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+    border-bottom-color: #FFF7E3
+}
+
+.main-body {
+    padding-top: 50px;
+}
+
+#tumblr-logo {
+    width: 60px;
+}
+
+body {
+    background-color: #FFF7E3;
+    font-family: 'Lalezar', cursive;
+    font-size: 16px;
+}
+
+#searchForm {
+    margin-top: 10px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}

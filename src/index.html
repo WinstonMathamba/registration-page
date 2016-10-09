@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<!--/*@thymesVar id="user" type="com.fosterstory.entity.User"*/-->
+<!--/*@thymesVar id="role" type="com.fosterstory.entity.Role"*/-->
+<!--/*@thymesVar id="image" type="com.fosterstory.entity.Image"*/-->
+<!--/*@thymesVar id="address" type="com.fosterstory.entity.Address"*/-->
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../src/css/styles.css" th:href="@{css/styles.css}" />
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet" />
+</head>
+<body>
+
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner" th:fragment="pageHead">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../list.html" th:href="@{/}" class="navbar-brand "><img src="../src/img/fosterStoryW.svg" th:src="@{/images/fosterStoryW.svg}" /></a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a th:href="@{/}" href="../list.html">List Animals</a>
+                </li>
+                <li>
+                    <a th:href="@{/register}" href="../register.html">Become Foster Parents</a>
+                </li>
+                <li>
+                    <a th:href="@{/about}" href="../about.html">About Us</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/story}" href="../story.html">Post Animal Story</a></li>
+                        <li><a th:href="@{/profile}" href="../profile.html">Edit my Profile</a></li>
+                        <li><a th:href="@{/profile}" href="../profile.html">Update my animals</a></li>
+                        <li><a th:href="@{/logout}" href="../login.html">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container main-body">
+    <h2>Foster Parent Details</h2>
+    <hr>
+    <div class="row" id="fosterParentDetails">
+        <div class="col-md-3">
+            <div class="text-center">
+                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                <h6>Upload New Image</h6>
+
+                <input type="file" name="user-image" id="user-image" class="form-control">
+            </div>
+        </div>
+
+    <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+            <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-coffee"></i>
+            This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        <h3>Personal info</h3>
+
+         <form class="form-horizontal" id="editProfile" role="form" action="profile.html" th:action="@{/profile}" method="post" th:object="${user}">
+
+             <div class="form-group">
+                    <input type="hidden" name="id" id="id" th:value="*{id}" />
+                <label class="col-lg-3 control-label" for="email">
+                    Email:
+                </label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="email" name="email" id="email" th:value="*{email}" />
+                </div>
+             </div>
+
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="nickName">
+                    Nick Name:
+                </label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="nickName" id="nickName" th:value="*{nickName}"/>
+                </div>
+             </div>
+
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="firstName">
+                    First name:
+                </label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="firstName" id="firstName" th:value="*{firstName}" />
+                </div>
+             </div>
+
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="middleName">
+                    Middle name:
+                </label>
+                 <div class="col-lg-8">
+                    <input class="form-control" type="text" name="middleName" id="middleName" th:value="*{middleName}"/>
+                 </div>
+             </div>
+
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="lastName">
+                    Last name:
+                </label>
+                 <div class="col-lg-8">
+                    <input class="form-control" type="text" name="lastName" id="lastName" th:value="*{lastName}" />
+                 </div>
+             </div>
+
+            <div class="form-group">
+                <label class="col-lg-3 control-label" for="phone">
+                    Phone:
+                </label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="phone" id="phone" th:value="*{phone}"/>
+                </div>
+            </div>
+
+         <span th:name="address" id="address" th:object="${address}">
+             <div class="form-group">
+                <label class="col-lg-3 control-label" for="address">
+                    Address
+                </label>
+                    <!--<label class="col-lg-3 control-label" for="street1">-->
+                        <!--Street:-->
+                    <!--</label>-->
+                 <div class="col-lg-8">
+                    <input class="form-control" type="text" name="street1" id="street1" placeholder="Street 1" th:value="*{street1}"/>
+                     <br>
+                    <input class="form-control" type="text" name="street2" id="street2" placeholder="Street 2" th:value="*{street2}"/>
+                 </div>
+             </div>
+
+             <div class="form-group">
+                    <label class="col-lg-3 control-label" for="city">
+                        City:
+                    </label>
+                 <div class="col-lg-8">
+                    <input class="form-control" type="text" name="city" id="city" th:value="*{city}"/>
+                 </div>
+             </div>
+
+             <div class="form-group">
+                    <label class="col-lg-3 control-label" for="state">
+                        State:
+                    </label>
+                 <div class="col-lg-8">
+                     <div class="ui-select">
+                        <select class="form-control" name="state" id="state">
+                        <option value="">select...</option>
+                        <option value="AL" th:selected="*{state == 'AL'}">Alabama</option>
+                        <option value="AK" th:selected="*{state == 'AK'}">Alaska</option>
+                        <option value="AZ" th:selected="*{state == 'AZ'}">Arizona</option>
+                        <option value="AR" th:selected="*{state == 'AR'}">Arkansas</option>
+                        <option value="CA" th:selected="*{state == 'CA'}">California</option>
+                        <option value="CO" th:selected="*{state == 'CO'}">Colorado</option>
+                        <option value="CT" th:selected="*{state == 'CT'}">Connecticut</option>
+                        <option value="DE" th:selected="*{state == 'DE'}">Delaware</option>
+                        <option value="DC" th:selected="*{state == 'DC'}">District of Columbia</option>
+                        <option value="FL" th:selected="*{state == 'FL'}">Florida</option>
+                        <option value="GA" th:selected="*{state == 'GA'}">Georgia</option>
+                        <option value="HI" th:selected="*{state == 'HI'}">Hawaii</option>
+                        <option value="ID" th:selected="*{state == 'ID'}">Idaho</option>
+                        <option value="IL" th:selected="*{state == 'IL'}">Illinois</option>
+                        <option value="IN" th:selected="*{state == 'IN'}">Indiana</option>
+                        <option value="IA" th:selected="*{state == 'IA'}">Iowa</option>
+                        <option value="KS" th:selected="*{state == 'KS'}">Kansas</option>
+                        <option value="KY" th:selected="*{state == 'KY'}">Kentucky</option>
+                        <option value="LA" th:selected="*{state == 'LA'}">Louisiana</option>
+                        <option value="ME" th:selected="*{state == 'ME'}">Maine</option>
+                        <option value="MD" th:selected="*{state == 'MD'}">Maryland</option>
+                        <option value="MA" th:selected="*{state == 'MA'}">Massachusetts</option>
+                        <option value="MI" th:selected="*{state == 'MI'}">Michigan</option>
+                        <option value="MN" th:selected="*{state == 'MN'}">Minnesota</option>
+                        <option value="MS" th:selected="*{state == 'MS'}">Mississippi</option>
+                        <option value="MO" th:selected="*{state == 'MO'}">Missouri</option>
+                        <option value="MT" th:selected="*{state == 'MT'}">Montana</option>
+                        <option value="NE" th:selected="*{state == 'NE'}">Nebraska</option>
+                        <option value="NV" th:selected="*{state == 'NV'}">Nevada</option>
+                        <option value="NH" th:selected="*{state == 'NH'}">New Hampshire</option>
+                        <option value="NJ" th:selected="*{state == 'NJ'}">New Jersey</option>
+                        <option value="NM" th:selected="*{state == 'NM'}">New Mexico</option>
+                        <option value="NY" th:selected="*{state == 'NY'}">New York</option>
+                        <option value="NC" th:selected="*{state == 'NC'}">North Carolina</option>
+                        <option value="ND" th:selected="*{state == 'ND'}">North Dakota</option>
+                        <option value="OH" th:selected="*{state == 'OH'}">Ohio</option>
+                        <option value="OK" th:selected="*{state == 'OK'}">Oklahoma</option>
+                        <option value="OR" th:selected="*{state == 'OR'}">Oregon</option>
+                        <option value="PA" th:selected="*{state == 'PA'}">Pennsylvania</option>
+                        <option value="RI" th:selected="*{state == 'RI'}">Rhode Island</option>
+                        <option value="SC" th:selected="*{state == 'SC'}">South Carolina</option>
+                        <option value="SD" th:selected="*{state == 'SD'}">South Dakota</option>
+                        <option value="TN" th:selected="*{state == 'TN'}">Tennessee</option>
+                        <option value="TX" th:selected="*{state == 'TX'}">Texas</option>
+                        <option value="UT" th:selected="*{state == 'UT'}">Utah</option>
+                        <option value="VT" th:selected="*{state == 'VT'}">Vermont</option>
+                        <option value="VA" th:selected="*{state == 'VA'}">Virginia</option>
+                        <option value="WA" th:selected="*{state == 'WA'}">Washington</option>
+                        <option value="WV" th:selected="*{state == 'WV'}">West Virginia</option>
+                        <option value="WI" th:selected="*{state == 'WI'}">Wisconsin</option>
+                        <option value="WY" th:selected="*{state == 'WY'}">Wyoming</option>
+                    </select>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="form-group">
+                    <label class="col-lg-3 control-label" for="zip">
+                        ZIP Code:
+                    </label>
+                 <div class="col-lg-8">
+                        <input class="form-control" type="text" name="zip" id="zip" th:value="*{zip}"/>
+                 </div>
+             </div>
+         </span>
+
+                <h3>Social Media Links</h3>
+
+              <div class="form-group">
+                    <label class="col-lg-3 control-label" class="tumblr-logo" for="tumblr">
+                        <img src="../src/img/tumblr_logotype_whiteonblue_128.png" id="tumblr-logo"
+                             th:src="@{images/tumblr_logotype_whiteonblue/tumblr_logotype_whiteonblue_128.png}"/>
+                    </label>
+                  <div class="col-lg-8">
+                        <input class="form-control" type="url" name="tumblr" id="tumblr" th:value="*{tumblr}"/>
+                  </div>
+              </div>
+
+             <div class="form-group">
+                    <label class="col-lg-3 control-label" for="bio">
+                        Bio
+                    </label>
+                 <div class="col-lg-8">
+                    <textarea class="foster-bio form-control" name="bio" id="bio" rows="6"></textarea>
+                 </div>
+             </div>
+
+             <div class="form-group">
+                 <label class="col-md-3 control-lable"></label>
+                 <div class="col-md-8">
+                    <button class="btn btn-primary" ype="submit" id="save" name="action" value="save">Save Changes</button>
+                     <span></span>
+                    <button class="btn btn-default" type="submit" id="clear" name="action" value="clear">Reset form</button>
+                 </div>
+             </div>
+         </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
